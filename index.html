@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divya Rasania</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-base-900 text-base-content min-h-screen">
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <div class="flex items-center justify-center min-h-screen px-4">
+      <div class="text-center max-w-2xl">
+        <!-- Avatar -->
+        <div class="mb-8">
+          <div class="avatar mx-auto">
+            <div class="rounded-full w-24">
+              <img src="./profile.png" alt="Profile Picture" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Name -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Divya Rasania</h1>
+
+        <!-- Description -->
+        <p class="text-lg text-base-content/75 mb-8 leading-relaxed">
+          I'm a passionate developer crafting elegant solutions to complex
+          problems. Focused on building intuitive experiences with modern
+          technologies.
+        </p>
+
+        <!-- Social Links -->
+        <div class="flex justify-center gap-6 mb-12">
+          <!-- LinkedIn -->
+          <a
+            href="https://linkedin.com/in/divya-rasania"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost btn-lg btn-circle hover:bg-primary/20"
+            title="LinkedIn"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+
+          <!-- Email -->
+          <a
+            href="mailto:your.email@example.com"
+            class="btn btn-ghost btn-lg btn-circle hover:bg-primary/20"
+            title="Send Email"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </a>
+
+          <!-- Resume -->
+          <a
+            href="./resume.pdf"
+            download
+            class="btn btn-ghost btn-lg btn-circle hover:bg-primary/20"
+            title="Download Resume"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Footer Text -->
+        <p class="text-sm text-base-content/50">
+          Let's build something great together
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
