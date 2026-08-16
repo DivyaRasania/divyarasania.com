@@ -7,12 +7,12 @@
     <script>
       (() => {
         const saved = localStorage.getItem("theme");
-        const theme =
-          saved === "night" || saved === "winter"
-            ? saved
-            : window.matchMedia("(prefers-color-scheme: light)").matches
-              ? "winter"
-              : "night";
+        const hasOverride = saved === "night" || saved === "winter";
+        const theme = hasOverride
+          ? saved
+          : window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "winter"
+            : "night";
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
