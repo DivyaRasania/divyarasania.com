@@ -2,24 +2,36 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   background: radial-gradient(
     circle,
-    rgba(250, 204, 21, 0.15) 0%,
+    color-mix(in oklab, var(--glow-color) 55%, transparent) 0%,
+    color-mix(in oklab, var(--glow-color) 18%, transparent) 45%,
     transparent 70%
   );
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(80px);
-  z-index: -1;
+  filter: blur(70px);
+  z-index: 0;
   will-change: transform;
+  transition: background 0.4s ease;
+}
+
+/* Dark — night: warm amber against deep blue */
+[data-theme="night"] {
+  --glow-color: #fbbf24;
+}
+
+/* Light — winter: violet so it reads on cool white/blue */
+[data-theme="winter"] {
+  --glow-color: #a78bfa;
 }
 
 @media (max-width: 640px) {
   .mouse-glow {
-    width: 220px;
-    height: 220px;
-    filter: blur(60px);
+    width: 260px;
+    height: 260px;
+    filter: blur(55px);
   }
 }

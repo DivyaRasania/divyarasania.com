@@ -1,4 +1,33 @@
+const DARK_THEME = "night";
+const LIGHT_THEME = "winter";
+
+const themeToggle = document.getElementById("themeToggle");
 const mouseGlow = document.getElementById("mouseGlow");
+
+function applyTheme(theme) {
+  const next = theme === LIGHT_THEME ? LIGHT_THEME : DARK_THEME;
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+  if (themeToggle) themeToggle.checked = next === LIGHT_THEME;
+}
+
+function initTheme() {
+  const saved = localStorage.getItem("theme");
+  if (saved === DARK_THEME || saved === LIGHT_THEME) {
+    applyTheme(saved);
+    return;
+  }
+
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+  applyTheme(prefersLight ? LIGHT_THEME : DARK_THEME);
+}
+
+if (themeToggle) {
+  initTheme();
+  themeToggle.addEventListener("change", () => {
+    applyTheme(themeToggle.checked ? LIGHT_THEME : DARK_THEME);
+  });
+}
 
 if (mouseGlow) {
   const IDLE_MS = 1800;
