@@ -18,14 +18,85 @@
   transition: background 0.4s ease;
 }
 
-/* Dark — night: warm amber against deep blue */
+/* Dark — night: soft blend into navy base */
 [data-theme="night"] {
   --glow-color: #fbbf24;
+  --action-bg: var(--color-base-100);
+  --action-border: color-mix(in oklab, var(--color-base-content) 12%, transparent);
+  --action-text: var(--color-base-content);
+  --action-hover-bg: color-mix(in oklab, var(--color-base-content) 6%, var(--color-base-100));
+  --action-hover-border: color-mix(in oklab, var(--color-base-content) 24%, transparent);
+  --action-ripple: rgba(251, 191, 36, 0.16);
 }
 
-/* Light — winter: violet so it reads on cool white/blue */
+/* Light — winter: violet glow, soft pill buttons */
 [data-theme="winter"] {
   --glow-color: #a78bfa;
+  --action-bg: #ffffff;
+  --action-border: #d4d4d8;
+  --action-text: #18181b;
+  --action-hover-bg: #f4f4f5;
+  --action-hover-border: #a78bfa;
+  --action-ripple: rgba(167, 139, 250, 0.35);
+}
+
+/* Inspired by https://uiverse.io/iZOXVL/wise-goat-75 */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--action-border);
+  background-color: var(--action-bg);
+  color: var(--action-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 30px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.action-btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+.action-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    var(--action-ripple) 0%,
+    transparent 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.action-btn:hover {
+  border-color: var(--action-hover-border);
+  background: var(--action-hover-bg);
+}
+
+.action-btn:hover::after {
+  transform: scale(4);
+}
+
+.action-btn:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 640px) {
@@ -33,5 +104,11 @@
     width: 260px;
     height: 260px;
     filter: blur(55px);
+  }
+
+  .action-btn {
+    font-size: 0.82rem;
+    min-height: 3rem;
+    padding: 0.75rem 0.65rem;
   }
 }
