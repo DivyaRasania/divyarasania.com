@@ -12,3 +12,17 @@
   filter: blur(80px);
   z-index: -1;
 }
+
+@media (max-width: 640px) {
+  .mouse-glow {
+    width: 220px;
+    height: 220px;
+    filter: blur(60px);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .mouse-glow {
+    display: none;
+  }
+}
