@@ -1,5 +1,7 @@
 .mouse-glow {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 300px;
   height: 300px;
   background: radial-gradient(
@@ -11,6 +13,7 @@
   pointer-events: none;
   filter: blur(80px);
   z-index: -1;
+  will-change: transform;
 }
 
 @media (max-width: 640px) {
@@ -18,11 +21,5 @@
     width: 220px;
     height: 220px;
     filter: blur(60px);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  .mouse-glow {
-    display: none;
   }
 }
