@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Divya Rasania</title>
-    <script>
+    <script data-cfasync="false">
       (() => {
         const saved = localStorage.getItem("theme");
         const hasOverride = saved === "night" || saved === "winter";
@@ -26,9 +26,12 @@
       rel="stylesheet"
       type="text/css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      data-cfasync="false"
+    ></script>
     <link rel="icon" href="./favicon.jpg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="bg-base-100 text-base-content min-h-dvh overflow-x-hidden">
     <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
@@ -188,6 +191,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js" data-cfasync="false"></script>
   </body>
 </html>
